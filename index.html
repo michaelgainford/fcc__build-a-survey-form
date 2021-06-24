@@ -4,10 +4,151 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css" />
+    <title>Tell us about your coffee tastes</title>
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <h1 id="title">Wanna party?</h1>
+    <header>
+      <h1 id="title">Tell us about your coffee</h1>
+      <p id="description">
+        from the people who who brought you, a
+        <a
+          target="_blank"
+          href="https://codepen.io/michaelgainford/full/ZEedpQx"
+          >tribute to coffee</a
+        >
+      </p>
+    </header>
+    <main>
+      <form id="survey-form">
+        <!-- Name-->
+        <div class="form__group">
+          <label for="name" id="name-label">What is your name? </label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            class="form__input"
+            placeholder="please enter your name"
+            required
+          />
+        </div>
+        <!-- Email address-->
+        <div class="form__group">
+          <label for="email" id="email-label">
+            What is your e-mail address?
+          </label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            class="form__input"
+            placeholder="please enter your email address"
+            required
+          />
+        </div>
+        <!-- Like it or not?-->
+        <div class="form__group">
+          <label for="email" id="radio-label"> Do you like coffee? </label>
+          <div id="radio__group">
+            <label
+              >Yes
+              <input
+                type="radio"
+                name="radio"
+                id="radio"
+                class="radio"
+                required
+              />
+            </label>
+            <label
+              >No
+              <input
+                type="radio"
+                name="radio"
+                id="radio"
+                class="radio"
+                placeholder="please enter your email address"
+                required
+              />
+            </label>
+          </div>
+        </div>
+        <!-- Does it matter if it's black or white?-->
+        <div class="form__group">
+          <label for="how-do-you-like-it">How do you take your's?</label>
+          <div id="checkbox__group">
+            <label for="no-milk" id="check-label"
+              >No milk
+              <input
+                type="checkbox"
+                name="what-colour"
+                id="no-milk"
+                class="checkbox"
+            /></label>
+            <label for="some-milk" id="check-label"
+              >Some milk
+              <input
+                type="checkbox"
+                name="what-colour"
+                id="some-milk"
+                class="checkbox"
+            /></label>
+            <label for="milky" id="check-label"
+              >Milky
+              <input
+                type="checkbox"
+                name="what-colour"
+                id="no-milk"
+                class="checkbox"
+            /></label>
+          </div>
+        </div>
+        <!-- Number of coffees-->
+        <div class="form__group">
+          <label for="number" id="number-label">
+            How many cups do you drink per day?
+          </label>
+          <input
+            type="number"
+            name="number"
+            id="number"
+            class="form__input"
+            min="0"
+            max="100"
+            placeholder="Enter a number between 0 and 100"
+          />
+        </div>
+        <!-- Favourite type of coffee-->
+        <div class="form__group">
+          <label for="select" id="favourite-label">
+            What is your favourite drink?
+          </label>
+          <select id="dropdown" name="dropdown" class="form__input" required>
+            <option disabled selected value>Pick one...</option>
+            <option value="americano">Americano</option>
+            <option value="mocha">Mocha</option>
+            <option value="cappuccino">Cappuccino</option>
+            <option value="espresso">Espresso</option>
+            <option value="latte">Latte</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <!-- Textarea-->
+        <div class="form__group">
+          <label for="message" id="message-label">Anything to say?</label>
+          <textarea
+            id="message"
+            name="message"
+            placeholder="What would like to say?"
+            class="form__input"
+          ></textarea>
+        </div>
+        <!-- Submit-->
+        <div class="form__group">
+          <input type="submit" value="Send your message" />
+        </div>
+      </form>
+    </main>
   </body>
 </html>

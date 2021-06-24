@@ -12,10 +12,14 @@
 
 * {
   box-sizing: border-box;
+  font-family: var(--ff);
   margin: 0;
   padding: 0;
 }
 
+::placeholder {
+  opacity: 1;
+}
 body {
   align-items: center;
   background-blend-mode: multiply;
@@ -47,6 +51,7 @@ header {
     font-size: 1.4rem;
     letter-spacing: 0.2rem;
     line-height: 1.6rem;
+    margin-bottom: 0rem;
     text-transform: uppercase;
   }
   p {
@@ -64,7 +69,8 @@ header {
   }
   @media (min-width: 900px) {
     h1 {
-      font-size: 2rem;
+      font-size: 2.4rem;
+      margin-bottom: 0.8rem;
     }
     p {
       font-size: 1.2rem;
@@ -87,92 +93,121 @@ form {
   width: 100%;
   @media (min-width: 900px) {
     border-radius: 0.5rem;
+    padding: 3rem;
     width: 100%;
   }
-}
-.form__group {
-  display: flex;
-  flex-direction: column;
-  padding-bottom: 3rem;
-  @media (min-width: 900px) {
-    padding-bottom: 4rem;
-  }
-  label {
-    border-bottom: 1px solid var(--clr3-trans);
-    color: var(--clr3);
+  .form__group {
     display: flex;
-    font-size: 0.9rem;
-    font-weight: 100;
-    letter-spacing: 0.05rem;
-    margin-bottom: 0.8rem;
-    padding-bottom: 0.2rem;
-    text-align: left;
-    text-transform: lowercase;
-    width: 100%;
-  }
-  input,
-  textarea,
-  select {
-    border-radius: 0.1rem;
-    color: var(--clr1);
-    font-family: var(--ff);
-    letter-spacing: 0.05rem;
-    outline: 0;
-    transform: background-color 1s, border 1s;
-    width: 100%;
-    &:focus {
-      background-color: var(--clr3);
-      border-color: var(--clr1);
-      color: var(--clr1);
+    flex-direction: column;
+    padding-bottom: 3rem;
+    @media (min-width: 900px) {
+      padding-bottom: 4rem;
     }
-  }
-  textarea {
-    height: 5rem;
-    resize: both;
-    padding: 1.2rem 1rem;
+    label {
+      border-bottom: 1px solid var(--clr3-trans);
+      color: var(--clr3);
+      display: flex;
+      font-size: 0.9rem;
+      font-weight: 100;
+      letter-spacing: 0.05rem;
+      margin-bottom: 0.8rem;
+      padding-bottom: 0.2rem;
+      text-align: left;
+      text-transform: lowercase;
+      width: 100%;
+    }
+    input,
+    textarea,
+    select {
+      border-radius: 0.25rem;
+      border-width: 3px;
+      color: var(--clr1);
+      font-family: var(--ff);
+      letter-spacing: 0.05rem;
+      padding: 2rem 0;
+      outline: 0;
+      transform: background-color 1s, border 1s;
+      width: 100%;
+    }
+    select {
+      color: var(--clr3);
+    }
+    select.form__input {
+      color: var(--clr4);
+      padding: 1.5rem 0 1.5rem 2rem;
+    }
+    input::placeholder,
+    textarea::placeholder {
+      color: var(--clr4);
+    }
+    .form__input {
+      background: var(--clr1);
+      border: 3px solid var(--clr3);
+      border-radius: 0.4rem;
+      color: var(--clr4);
+      display: block;
+      font-size: 0.84rem;
+      height: 3rem;
+      padding: 1rem 1rem;
+      transition: background-color 1s, color 500ms, border-color 1s;
+      @media (min-width: 600px) {
+        font-size: 1rem;
+      }
+      @media (min-width: 900px) {
+        height: 5rem;
+        font-size: 1.2rem;
+        padding: 1.2rem 2rem;
+      }
+      &:hover {
+        background-color: var(--clr3);
+        border-color: var(--clr1);
+        color: var(--clr1);
+        &::placeholder {
+          color: var(--clr2);
+        }
+      }
+      &:focus {
+        background-color: var(--clr3);
+        border-color: var(--clr1);
+        color: var(--clr1);
+      }
+    }
+    textarea.form__input {
+      height: 8rem;
+      resize: both;
+    } /* button */
+    input[type="submit"] {
+      background: var(--clr3);
+      border: 3px solid var(--clr3);
+      border-radius: 0.4rem;
+      color: var(--clr1);
+      cursor: pointer;
+      font-family: var(--ff);
+      font-size: 1.25rem;
+      letter-spacing: 0.1rem;
+      padding: 1.6rem 0;
+      transition: background-color 1s, border-color 1s;
+      @media (min-width: 600px) {
+        font-size: 1.5rem;
+        padding: 3rem 0;
+      }
+      @media (min-width: 900px) {
+        font-size: 1.8rem;
+        padding: 5rem 0;
+      }
+      &:focus {
+        background-color: var(--clr4);
+        border-color: var(--clr4);
+        color: var(--clr1);
+      }
+      &:hover {
+        background-color: var(--clr4);
+        border-color: var(--clr4);
+        color: var(--clr1);
+      }
+    }
   }
 }
-.form__input {
-  background: var(--clr1);
-  border: 3px solid var(--clr3);
-  border-radius: 0.4rem;
-  display: block;
-  font-size: 0.84rem;
-  height: 3rem;
-  padding: 0.5rem 1rem;
-  @media (min-width: 600px) {
-    font-size: 1rem;
-  }
-  @media (min-width: 900px) {
-    height: 5rem;
-    font-size: 1.2rem;
-    padding: 1.2rem 2rem;
-  }
-  &:hover {
-    background-color: var(--clr3);
-    border-color: var(--clr1);
-    color: var(--clr1);
-    &::placeholder,
-    #dropdown {
-      color: var(--clr2);
-    }
-  }
-
-  &::placeholder,
-  #dropdown {
-    background-color: inherit;
-    border-color: inherit;
-    color: var(--clr4);
-    &:hover {
-      color: var(--clr1);
-    }
-  }
-}
-
-/* *::placeholder {
-  background-color: var(--clr2);
-  color: var(--clr3);
-} */
 
 /* Radio buttons group */
 #radio__group {
@@ -222,51 +257,14 @@ form {
   }
 }
 
-/* Select group */
-#dropdown {
-  color: var(--clr4);
-  > * {
-    background-color: var(--clr1);
-    color: var(--clr4);
-    font-family: var(--ff);
-  }
-  option {
-    font-family: var(--ff);
-    font-size: 1rem;
-    > * {
-      font-family: var(--ff);
-      &:hover {
-        background-color: var(--clr3);
-        color: var(--clr1);
-      }
-    }
+footer p {
+  color: var(--clr3);
+  font-size: 1rem;
+  padding: 1rem 0;
+  a {
+    color: var(--clr3);
     &:hover {
-      background-color: var(--clr3);
-      color: var(--clr1);
+      text-decoration: none;
     }
-  }
-}
-
-/* button */
-input[type="submit"] {
-  background: var(--clr3-trans);
-  border-color: var(--clr3);
-  border-radius: 0.1rem;
-  color: var(--clr4);
-  cursor: pointer;
-  font-family: var(--ff);
-  font-size: 1.25rem;
-  letter-spacing: 0.1rem;
-  padding: 1.6rem 0;
-  transition: background-color 1s, border-color 1s;
-  &:focus {
-    background-color: var(--clr4);
-    border-color: var(--clr4);
-    color: var(--clr1);
-  }
-  &:hover {
-    background-color: var(--clr4);
-    border-color: var(--clr4);
-    color: var(--clr1);
   }
 }

@@ -12,8 +12,29 @@
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  font-family: var(--ff);
   margin: 0;
   padding: 0;
+}
+
+::-webkit-input-placeholder {
+  opacity: 1;
+}
+
+::-moz-placeholder {
+  opacity: 1;
+}
+
+:-ms-input-placeholder {
+  opacity: 1;
+}
+
+::-ms-input-placeholder {
+  opacity: 1;
+}
+
+::placeholder {
+  opacity: 1;
 }
 
 body {
@@ -62,6 +83,7 @@ header h1 {
   font-size: 1.4rem;
   letter-spacing: 0.2rem;
   line-height: 1.6rem;
+  margin-bottom: 0rem;
   text-transform: uppercase;
 }
 header p {
@@ -79,7 +101,8 @@ header p a:hover {
 }
 @media (min-width: 900px) {
   header h1 {
-    font-size: 2rem;
+    font-size: 2.4rem;
+    margin-bottom: 0.8rem;
   }
   header p {
     font-size: 1.2rem;
@@ -116,11 +139,11 @@ form {
 @media (min-width: 900px) {
   form {
     border-radius: 0.5rem;
+    padding: 3rem;
     width: 100%;
   }
 }
-
-.form__group {
+form .form__group {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -129,13 +152,14 @@ form {
       -ms-flex-direction: column;
           flex-direction: column;
   padding-bottom: 3rem;
+  /* button */
 }
 @media (min-width: 900px) {
-  .form__group {
+  form .form__group {
     padding-bottom: 4rem;
   }
 }
-.form__group label {
+form .form__group label {
   border-bottom: 1px solid var(--clr3-trans);
   color: var(--clr3);
   display: -webkit-box;
@@ -150,120 +174,132 @@ form {
   text-transform: lowercase;
   width: 100%;
 }
-.form__group input,
-.form__group textarea,
-.form__group select {
-  border-radius: 0.1rem;
+form .form__group input,
+form .form__group textarea,
+form .form__group select {
+  border-radius: 0.25rem;
+  border-width: 3px;
   color: var(--clr1);
   font-family: var(--ff);
   letter-spacing: 0.05rem;
+  padding: 2rem 0;
   outline: 0;
   -webkit-transform: background-color 1s, border 1s;
           transform: background-color 1s, border 1s;
   width: 100%;
 }
-.form__group input:focus,
-.form__group textarea:focus,
-.form__group select:focus {
-  background-color: var(--clr3);
-  border-color: var(--clr1);
-  color: var(--clr1);
+form .form__group select {
+  color: var(--clr3);
 }
-.form__group textarea {
-  height: 5rem;
-  resize: both;
-  padding: 1.2rem 1rem;
+form .form__group select.form__input {
+  color: var(--clr4);
+  padding: 1.5rem 0 1.5rem 2rem;
 }
-
-.form__input {
+form .form__group input::-webkit-input-placeholder, form .form__group textarea::-webkit-input-placeholder {
+  color: var(--clr4);
+}
+form .form__group input::-moz-placeholder, form .form__group textarea::-moz-placeholder {
+  color: var(--clr4);
+}
+form .form__group input:-ms-input-placeholder, form .form__group textarea:-ms-input-placeholder {
+  color: var(--clr4);
+}
+form .form__group input::-ms-input-placeholder, form .form__group textarea::-ms-input-placeholder {
+  color: var(--clr4);
+}
+form .form__group input::placeholder,
+form .form__group textarea::placeholder {
+  color: var(--clr4);
+}
+form .form__group .form__input {
   background: var(--clr1);
   border: 3px solid var(--clr3);
   border-radius: 0.4rem;
+  color: var(--clr4);
   display: block;
   font-size: 0.84rem;
   height: 3rem;
-  padding: 0.5rem 1rem;
+  padding: 1rem 1rem;
+  -webkit-transition: background-color 1s, color 500ms, border-color 1s;
+  transition: background-color 1s, color 500ms, border-color 1s;
 }
 @media (min-width: 600px) {
-  .form__input {
+  form .form__group .form__input {
     font-size: 1rem;
   }
 }
 @media (min-width: 900px) {
-  .form__input {
+  form .form__group .form__input {
     height: 5rem;
     font-size: 1.2rem;
     padding: 1.2rem 2rem;
   }
 }
-.form__input:hover {
+form .form__group .form__input:hover {
   background-color: var(--clr3);
   border-color: var(--clr1);
   color: var(--clr1);
 }
-.form__input:hover::-webkit-input-placeholder {
+form .form__group .form__input:hover::-webkit-input-placeholder {
   color: var(--clr2);
 }
-.form__input:hover::-moz-placeholder {
+form .form__group .form__input:hover::-moz-placeholder {
   color: var(--clr2);
 }
-.form__input:hover:-ms-input-placeholder {
+form .form__group .form__input:hover:-ms-input-placeholder {
   color: var(--clr2);
 }
-.form__input:hover::-ms-input-placeholder {
+form .form__group .form__input:hover::-ms-input-placeholder {
   color: var(--clr2);
 }
-.form__input:hover::placeholder,
-.form__input:hover #dropdown {
+form .form__group .form__input:hover::placeholder {
   color: var(--clr2);
 }
-.form__input::-webkit-input-placeholder {
-  background-color: inherit;
-  border-color: inherit;
-  color: var(--clr4);
-}
-.form__input::-moz-placeholder {
-  background-color: inherit;
-  border-color: inherit;
-  color: var(--clr4);
-}
-.form__input:-ms-input-placeholder {
-  background-color: inherit;
-  border-color: inherit;
-  color: var(--clr4);
-}
-.form__input::-ms-input-placeholder {
-  background-color: inherit;
-  border-color: inherit;
-  color: var(--clr4);
-}
-.form__input::placeholder,
-.form__input #dropdown {
-  background-color: inherit;
-  border-color: inherit;
-  color: var(--clr4);
-}
-.form__input::-webkit-input-placeholder:hover {
+form .form__group .form__input:focus {
+  background-color: var(--clr3);
+  border-color: var(--clr1);
   color: var(--clr1);
 }
-.form__input::-moz-placeholder:hover {
+form .form__group textarea.form__input {
+  height: 8rem;
+  resize: both;
+}
+form .form__group input[type=submit] {
+  background: var(--clr3);
+  border: 3px solid var(--clr3);
+  border-radius: 0.4rem;
+  color: var(--clr1);
+  cursor: pointer;
+  font-family: var(--ff);
+  font-size: 1.25rem;
+  letter-spacing: 0.1rem;
+  padding: 1.6rem 0;
+  -webkit-transition: background-color 1s, border-color 1s;
+  transition: background-color 1s, border-color 1s;
+}
+@media (min-width: 600px) {
+  form .form__group input[type=submit] {
+    font-size: 1.5rem;
+    padding: 3rem 0;
+  }
+}
+@media (min-width: 900px) {
+  form .form__group input[type=submit] {
+    font-size: 1.8rem;
+    padding: 5rem 0;
+  }
+}
+form .form__group input[type=submit]:focus {
+  background-color: var(--clr4);
+  border-color: var(--clr4);
   color: var(--clr1);
 }
-.form__input:-ms-input-placeholder:hover {
-  color: var(--clr1);
-}
-.form__input::-ms-input-placeholder:hover {
-  color: var(--clr1);
-}
-.form__input::placeholder:hover,
-.form__input #dropdown:hover {
+form .form__group input[type=submit]:hover {
+  background-color: var(--clr4);
+  border-color: var(--clr4);
   color: var(--clr1);
 }
 
-/* *::placeholder {
-  background-color: var(--clr2);
-  color: var(--clr3);
-} */
 /* Radio buttons group */
 #radio__group {
   -webkit-box-align: center;
@@ -340,54 +376,16 @@ form {
   width: auto;
 }
 
-/* Select group */
-#dropdown {
-  color: var(--clr4);
-}
-#dropdown > * {
-  background-color: var(--clr1);
-  color: var(--clr4);
-  font-family: var(--ff);
-}
-#dropdown option {
-  font-family: var(--ff);
+footer p {
+  color: var(--clr3);
   font-size: 1rem;
+  padding: 1rem 0;
 }
-#dropdown option > * {
-  font-family: var(--ff);
+footer p a {
+  color: var(--clr3);
 }
-#dropdown option > *:hover {
-  background-color: var(--clr3);
-  color: var(--clr1);
-}
-#dropdown option:hover {
-  background-color: var(--clr3);
-  color: var(--clr1);
-}
-
-/* button */
-input[type=submit] {
-  background: var(--clr3-trans);
-  border-color: var(--clr3);
-  border-radius: 0.1rem;
-  color: var(--clr4);
-  cursor: pointer;
-  font-family: var(--ff);
-  font-size: 1.25rem;
-  letter-spacing: 0.1rem;
-  padding: 1.6rem 0;
-  -webkit-transition: background-color 1s, border-color 1s;
-  transition: background-color 1s, border-color 1s;
-}
-input[type=submit]:focus {
-  background-color: var(--clr4);
-  border-color: var(--clr4);
-  color: var(--clr1);
-}
-input[type=submit]:hover {
-  background-color: var(--clr4);
-  border-color: var(--clr4);
-  color: var(--clr1);
+footer p a:hover {
+  text-decoration: none;
 }
 
 /*# sourceMappingURL=style.css.map */

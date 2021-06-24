@@ -11,11 +11,12 @@
     <header>
       <h1 id="title">Tell us about your coffee</h1>
       <p id="description">
-        from the people who who brought you, a
+        from the people who who brought you,
         <a
           target="_blank"
           href="https://codepen.io/michaelgainford/full/ZEedpQx"
-          >tribute to coffee</a
+        >
+          my tribute to coffee</a
         >
       </p>
     </header>
@@ -56,8 +57,9 @@
               <input
                 type="radio"
                 name="radio"
-                id="radio"
+                id="yes"
                 class="radio"
+                value="yes"
                 required
               />
             </label>
@@ -66,9 +68,9 @@
               <input
                 type="radio"
                 name="radio"
-                id="radio"
+                id="no"
                 class="radio"
-                placeholder="please enter your email address"
+                value="no"
                 required
               />
             </label>
@@ -84,6 +86,7 @@
                 type="checkbox"
                 name="what-colour"
                 id="no-milk"
+                value="no-milk"
                 class="checkbox"
             /></label>
             <label for="some-milk" id="check-label"
@@ -92,6 +95,7 @@
                 type="checkbox"
                 name="what-colour"
                 id="some-milk"
+                value="some-milk"
                 class="checkbox"
             /></label>
             <label for="milky" id="check-label"
@@ -99,7 +103,8 @@
               <input
                 type="checkbox"
                 name="what-colour"
-                id="no-milk"
+                id="milky"
+                value="milky"
                 class="checkbox"
             /></label>
           </div>
@@ -125,7 +130,9 @@
             What is your favourite drink?
           </label>
           <select id="dropdown" name="dropdown" class="form__input" required>
-            <option disabled selected value>Pick one...</option>
+            <option class="disabled" disabled selected value>
+              Pick one...
+            </option>
             <option value="americano">Americano</option>
             <option value="mocha">Mocha</option>
             <option value="cappuccino">Cappuccino</option>
@@ -140,15 +147,21 @@
           <textarea
             id="message"
             name="message"
-            placeholder="What would like to say?"
+            placeholder="What would you like to say?"
             class="form__input"
           ></textarea>
         </div>
         <!-- Submit-->
         <div class="form__group">
-          <input type="submit" value="Send your message" />
+          <input id="submit" type="submit" value="Send your message" />
         </div>
       </form>
     </main>
+    <footer>
+      <p>
+        Built by
+        <a target="_blank" href="https://michaelgainford.co.uk">Michael</a>
+      </p>
+    </footer>
   </body>
 </html>
